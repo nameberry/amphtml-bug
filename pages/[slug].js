@@ -92,3 +92,19 @@ export default function DogPage() {
     </div>
   )
 }
+
+export async function getStaticProps({ params, preview = false, previewData }) {
+  
+  return {
+    props: {
+    },
+    revalidate: 60 * 15 // seconds
+  }
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [ '/dog' ],
+    fallback: true,
+  }
+}
